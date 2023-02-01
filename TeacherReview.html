@@ -13,6 +13,12 @@
             font-family: "Courier New", Courier, monospace;
             background-color: rgb(0, 0, 0);
             }
+            
+            #teacher-list {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
 
             .topnav {
             overflow: hidden;
@@ -171,58 +177,57 @@
             <!-- <div class="search-wrapper"> -->
                 <div class="search-bar">
                     <label for="search"></label>
-                    <input type="search" id="search" placeholder="search anything" name="q">
+                    <input type="search" id="search" placeholder="search anything">
                     <!-- <button type="submit" img src="./search.jpg"></button> -->
                </div>
             <!--</div>-->
         </main>
         <main>
             <div class="teacher-catalog">
-                <div class="card">
-                    <div class="header"><a href="Jan.html">Michael Jan</a></div>
-                    <div class="body">AP Comp Sci A (B2)</div>
-                    <div class="body">mikJan@gfusdk12.net</div>
-                    </div>
-                </div>
+                <ul id="teacher-list">
+                    <li><div class="card">
+                        <div class="header"><a href="Jan.html">Michael Jan</a></div>
+                        <div class="body">AP Comp Sci A (B2)</div>
+                        <div class="body">mikJan@fusdk12.net</div>
+                    </div></li>
+                    <li><div class="card">
+                        <div class="header"><a href="Boegman.html">John Boegman</a></div>
+                        <div class="body">CLASS NAME (E1A)</div>
+                        <div class="body">@fusdk12.net</div>
+                    </div></li>
+                    <li><div class="card">
+                        <div class="header"><a href="Marple.html">Ryan Marple</a></div>
+                        <div class="body">CLASS NAME (ROOM NO.)</div>
+                        <div class="body">@fusdk12.net</div>
+                    </div></li>
+                </ul>
             </div>
+            
+            <script>
+  function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("teacher-list");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+            
         </main>
     
-    </br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
+
         <div class="footer">
             <footer>
                 <p>You can visit our instagram: <a href="https://www.instagram.com/msjgreenclub/" target="_blank">@msjGreenClub</a> or email us at msjGreenClub@gmail.com if you wish to see some of our other content or wish to contact us</p>
