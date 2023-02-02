@@ -23,7 +23,7 @@
     </header>
 </body>
 <body>
-
+    
     <div class="main">
         <div class="compose">
             <textarea class="authorinput" placeholder="name"></textarea>
@@ -58,6 +58,44 @@
         container.insertAdjacentHTML('beforeend', html);
     }
 </script>
+
+<!--
+<script>
+    function addThread(thread) {
+        var html = `
+            <div class="comment">
+                <div class="top-comment">
+                    <p class="user">
+                        ${comment.author}
+                    </p>
+                    <p class="comment-ts">
+                        ${new Date(comment.date).toLocaleString()}
+                    </p>
+                </div>
+            </div>
+            `
+            var content = `
+            
+            ` 
+        comments.insertAdjacentHTML('beforeend', commentHtml);
+        }
+    
+    var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            var txt = document.querySelector('msginput');
+            var aut = document.querySelector('authorinput')
+            var comment = {
+                content: msginput.value,
+                date: Date.now(),
+                author: authorinput.value
+            }
+            addComment(comment);
+            txt.value = '';
+            thread.comments.push(comment);
+            localStorage.setItem('threads', JSON.stringify(threads));
+        }
+    </script>
+-->
 
 <style>
     ul{
