@@ -14,7 +14,7 @@ searchInput.addEventListener("input", e => {
   })
 })
 
-fetch("https://mocki.io/v1/8224d6c4-69cc-4829-abea-cb9393a09843")
+fetch("https://mocki.io/v1/9df898dc-56db-4949-b431-2351cbf24ce5 ")
   .then(res => res.json())
   .then(data => {
     users = data.map(user => {
