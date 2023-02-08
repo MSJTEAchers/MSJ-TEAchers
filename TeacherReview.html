@@ -4,7 +4,7 @@
         <meta name="description" content="Learn more teachers and gain new studying tools at MSJ TEAchers. The website to help you navigate your success at MSJHS!"
         <link rel="icon" href="./MSJTEAchersLogo.jpg">
         <script src="script.js" defer></script>
-        <title>MSJ Green News</title>
+        <title>MSJ Teacher Catalog</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
@@ -125,6 +125,7 @@
                 font-size: 1rem;
             }
             .teacher-catalog{
+                clear:both;
                 display:block;
                 grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
                 gap:.25rem;
@@ -168,36 +169,21 @@
                 <p style="text-align:center"><h1 style="color:rgb(255, 255, 255);"><b>Teacher Search</centre></b></h1></p>  
             </div>
            <div class="container">
-            <!-- <div class="search-wrapper"> -->
                 <div class="search-bar">
                     <label for="search"></label>
-                    <input type="search" id="search" placeholder="Search a teacher or class" name="q">
-                    <!-- <button type="submit" img src="./search.jpg"></button> -->
+                    <input type="search" id="search" placeholder="Search a teacher or class" data-search>
                </div>
-            <!--</div>-->
-        </main>
-        <main>
-            <div class="teacher-catalog">
-                <div class="card">
-                    <div class="header"><a href="Jan.html">Michael Jan</a></div>
-                    <div class="body">AP Comp Sci A (B2)</div>
-                    <div class="body">mjan@gfusdk12.net</div>
+
+
+            <div class="teacher-catalog" data-teacher-catalog>
+
+                <template data-user-template>  
+                    <div class="card">
+                        <a href class="url" data-url><div class="header" data-header></div></a>
+                        <div class="body" data-body></div>
+                        <div class="email" data-email></div>
                     </div>
-                </div>
-            <div class="teacher-catalog">
-                <div class="card">
-                    <div class="header"><a href="Boegman.html">John Boegman</a></div>
-                    <div class="body">Eng 10 H (E1A)</div>
-                    <div class="body">jboegman@fusdk12.net</div>
-                    </div>
-                </div>
-            <div class="teacher-catalog">
-                <div class="card">
-                    <div class="header"><a href="Marple.html">Ryan Marple</a></div>
-                    <div class="body">Eng 10 H (E1A)</div>
-                    <div class="body">rmarple@fusdk12.net</div>
-                    </div>
-                </div>
+                </template>
             </div>
         </main>
 
