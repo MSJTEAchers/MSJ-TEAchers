@@ -111,9 +111,9 @@ body {
             var txt = document.querySelector('msginput');
             var aut = document.querySelector('authorinput')
             var comment = {
-                content: msginput.value,
+                content: txt.value,
                 date: Date.now(),
-                author: authorinput.value
+                author: aut.value
             }
             addComment(comment);
             txt.value = '';
