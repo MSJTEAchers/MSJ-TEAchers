@@ -108,12 +108,12 @@ body {
 
         var btn = document.querySelector('button');
         btn.addEventListener('click', function() {
-            var txt = document.querySelector('msginput');
-            var aut = document.querySelector('authorinput')
+            var txt = document.querySelector('.msginput');
+            var author = document.querySelector('.authorinput');
             var comment = {
                 content: txt.value,
                 date: Date.now(),
-                author: aut.value
+                author: author.value
             }
             addComment(comment);
             txt.value = '';
