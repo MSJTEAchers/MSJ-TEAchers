@@ -39,7 +39,8 @@
     
     <div class="main">
         <div class="compose">
-            <textarea class="authorinput" placeholder="name"></textarea>
+            <textarea class="authorinput" placeholder="Name"></textarea>
+            <textarea class="titleinput" placeholder="Title"></textarea>
             <textarea class="msginput"></textarea>
             <button>Create Post</button>
         </div>
@@ -48,67 +49,52 @@
     </div>
 <script src="./data.js"></script>
 <script>
-    console.log(threads);
-    var container = document.querySelector('ul');
-    for (let thread of threads) {
-        var html = `
-        <li class="row">
-            <a href="./thread.html?${thread.id}">
-                <h4 class="title">
-                    ${thread.title}
-                </h4>
-                <div class="bottom">
-                    <p class="timestamp">
-                        ${new Date(thread.date).toLocaleString()}
-                    </p>
-                    <p class="comment-count">
-                        ${thread.comments.length} comments
-                    </p>
-                </div>
-            </a>
-        </li>
-        `
-        container.insertAdjacentHTML('beforeend', html);
-    }
-</script>
-
-<!--
-<script>
-    function addThread(thread) {
-        var html = `
-            <div class="comment">
-                <div class="top-comment">
-                    <p class="user">
-                        ${comment.author}
-                    </p>
-                    <p class="comment-ts">
-                        ${new Date(comment.date).toLocaleString()}
-                    </p>
-                </div>
-            </div>
+        function addThread(thread) {
+            var threadHtml = `
+                <li class="row">
+                    <a href="./thread.html?${thread.id}">
+                        <h4 class="title">
+                            ${thread.title}
+                        </h4>
+                        <div class="bottom">
+                            <p class="timestamp">
+                                ${new Date(thread.date).toLocaleString()}
+                            </p>
+                            <p class="comment-count">
+                                ${thread.comments.length} comments
+                            </p>
+                        </div>
+                    </a>
+                </li>
             `
-            var content = `
-            
-            ` 
-        comments.insertAdjacentHTML('beforeend', commentHtml);
+            container.insertAdjacentHTML('beforeend', html);
         }
-    
-    var btn = document.querySelector('button');
+
+        console.log(threads);
+        var container = document.querySelector('ul');
+        for (let thread of threads) {
+            addThread(thread);
+        }
+
+        var btn = document.querySelector('button');
         btn.addEventListener('click', function() {
-            var txt = document.querySelector('msginput');
-            var aut = document.querySelector('authorinput')
+            var txt = document.querySelector('.msginput');
+            var author = document.querySelector('.authorinput');
+            var title = document.querySelector('.titleinput');
             var comment = {
-                content: msginput.value,
+                title: title.value,
+                content: txt.value,
                 date: Date.now(),
-                author: authorinput.value
+                author: author.value
             }
-            addComment(comment);
+            addThread(Thread);
             txt.value = '';
-            thread.comments.push(comment);
+            author.value = '';
+            title.value = '';
+            threads.push(thread);
             localStorage.setItem('threads', JSON.stringify(threads));
-        }
+        })
     </script>
--->
 
 <style>
     ul{
