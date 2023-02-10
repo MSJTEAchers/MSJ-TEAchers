@@ -117,6 +117,7 @@ body {
             }
             addComment(comment);
             txt.value = '';
+            author.value = '';
             thread.comments.push(comment);
             localStorage.setItem('threads', JSON.stringify(threads));
         })
