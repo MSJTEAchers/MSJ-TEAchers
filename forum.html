@@ -39,7 +39,7 @@
     
     <div class="main">
         <div class="compose">
-            <textarea class="authorinput" placeholder="Name"></textarea>
+            <textarea class="authorinput" placeholder="Name"></textarea><br>
             <textarea class="titleinput" placeholder="Title"></textarea>
             <textarea class="msginput"></textarea>
             <button>Create Post</button>
@@ -50,7 +50,6 @@
 <script src="./data.js"></script>
 <script>
         function addThread(thread) {
-            var container = document.querySelector('ul');
             var threadHtml = `
                 <li class="row">
                     <a href="./thread.html?${thread.id}">
@@ -68,10 +67,11 @@
                     </a>
                 </li>
             `
-            container.insertAdjacentHTML('beforeend', html);
+            container.insertAdjacentHTML('beforeend', threadHtml);
         }
 
         console.log(threads);
+        var container = document.querySelector('ul');
         for (let thread of threads) {
             addThread(thread);
         }
