@@ -50,6 +50,7 @@
 <script src="./data.js"></script>
 <script>
         function addThread(thread) {
+            var container = document.querySelector('ul');
             var threadHtml = `
                 <li class="row">
                     <a href="./thread.html?${thread.id}">
@@ -71,7 +72,6 @@
         }
 
         console.log(threads);
-        var container = document.querySelector('ul');
         for (let thread of threads) {
             addThread(thread);
         }
